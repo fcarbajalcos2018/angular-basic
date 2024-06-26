@@ -1,0 +1,12 @@
+<h1>Vought Employees</h1>
+<div *ngIf="removedEmp; else notRemoved">
+    <h3>Employee instance <small class="text-danger">{{removedEmp}}</small> removed from list.</h3>
+</div>
+<ng-template #notRemoved>
+    <h3>No instances removed.</h3>
+</ng-template>
+
+<ul class="mt-2 list-group">
+    <li *ngFor="let name of voughtEmployees" class="list-group-item">{{name}}</li>
+</ul>
+<button *ngIf="voughtEmployees.length > 0" (click)="rfs()" class="btn btn-outline-danger">Delete first instance</button>

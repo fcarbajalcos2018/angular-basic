@@ -1,0 +1,15 @@
+<h1>Vought Employee</h1>
+<dl>
+    <td>Name:</td>
+    <dd>{{name}}</dd>
+    <td>Age:</td>
+    <dd>{{age}}</dd>
+    <td>Capitalised:</td>
+    <dd>{{capitaliseName}}</dd>
+    <td>Description:</td>
+    <dd>{{getDescription}}</dd>
+</dl>
+
+<button *ngIf="name === 'Homelander'" (click)="changeName('A-Train')" class="btn btn-primary">Change Name</button>
+<button (click)="changeAge(28)" class="btn btn-secondary">Change Age</button>
+<button (click)="changeOcc('a member of The Seven')" class="btn btn-secondary">Change Occupation</button>
