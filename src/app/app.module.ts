@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 
 import { CounterModule } from './components/counter.module';
 import { VoughtModule } from './vought/vought.module';
+import { StarWarsModule } from './starwars/starwars.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    VoughtModule,
+    StarWarsModule,
+    //VoughtModule,
     CounterModule,
     BrowserModule,
     AppRoutingModule

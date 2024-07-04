@@ -1,0 +1,47 @@
+<h4>Jedi</h4>
+<ul class="list-group">
+  <li *ngFor="
+      let character of characterList; 
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      " 
+      class="list-group-item 
+             d-flex
+             justify-content-between
+             align-items-center"
+      [ngClass]="{ 
+        'list-group-item-success': isClicked,
+        'list-group-item-dark': !isClicked && isEven
+       }">
+
+
+    <div class="col text-primary">{{i + 1}}. </div>
+
+    <div class="col-9" (click)="onClick(i)">
+
+      <span>Name: </span> {{character.Name}}<br/>
+      <span>Alignment: </span> {{character.jediOrSith()}}<br/>
+      <span>ID: </span> {{character.ID}}<br/>
+        <!--<span>First? {{isFirst}}</span><br/>
+        <span>Last? {{isLast}}</span><br/>
+        <span>Even? {{isEven}}</span>-->
+
+    </div>
+    <div class="col-2">
+      <button class="row btn btn-danger"
+      (click)="onDelete(character.ID)">Delete</button>
+    </div>  
+
+  </li>
+</ul>
+<br />
+<!--<h4>Sith</h4>
+<ul class="list-group">
+  <li class="list-group-item">Sheev Palpatine</li>
+  <li class="list-group-item">Darth Maul</li>
+  <li class="list-group-item">Count Dooku</li>
+</ul>
+<br />
+-->

@@ -1,0 +1,34 @@
+<form (ngSubmit)="emitCharacter()">
+    <h4>Add Jedi/Sith</h4>
+    <div class="row">
+        <div class="col">Name:</div>
+        <input name="name" 
+               [(ngModel)]="character.name"
+               class="col form-control mb-2" 
+               type="text" 
+               placeholder="Name">
+    </div>
+    <div class="row">
+        <div class="col mb-2">Alignment:</div>
+        <input name="Faction" 
+               [(ngModel)]="character.isJedi"
+               (ngModelChange)="character.toJedi()"
+               class="col" 
+               type="radio" 
+               id="jedi" 
+               value="Jedi">
+        <label class="col" 
+               for="jedi">Jedi</label>
+        <input name="Faction" 
+               [(ngModel)]="character.isJedi"
+               (ngModelChange)="character.toSith()"
+               class="col" 
+               type="radio" 
+               id="sith" 
+               value="Sith">
+        <label class="col" 
+               for="sith">Sith</label>    
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    <pre>{{ character | json }}</pre>
+</form>

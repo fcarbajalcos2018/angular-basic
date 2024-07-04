@@ -1,0 +1,11 @@
+<h1>Star Wars Page</h1>
+<hr/>
+
+<div class="row">
+    <div class="col">
+        <app-sw-list (onDeleteCharacter)="onDeleteCharacter($event)" [characterList]="characters"></app-sw-list>
+    </div>
+    <div class="col">
+        <app-sw-form (onNewCharacter)="onNewCharacter($event)"></app-sw-form>
+    </div>
+</div>
